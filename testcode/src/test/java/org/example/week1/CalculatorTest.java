@@ -19,7 +19,7 @@ class CalculatorTest {
     @DisplayName("입력 값에 Null이 존재할 경우 예외가 발생한다.")
     void addWithNullInput() {
         Assertions.assertThatThrownBy(
-                        () -> {digitalCalculator.add(null, 2);}
+                        () -> digitalCalculator.add(null, 2)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("NULL");
     }
@@ -28,7 +28,7 @@ class CalculatorTest {
     @DisplayName("결과 값이 100,000 초과일 경우 예외가 발생한다.")
     void addResultOver100000() {
         Assertions.assertThatThrownBy(
-                        () -> {digitalCalculator.add(100000, 1);}
+                        () -> digitalCalculator.add(100000, 1)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Invalid limit");
     }
@@ -37,7 +37,7 @@ class CalculatorTest {
     @DisplayName("결과 값이 100,000 초과일 경우 예외가 발생한다.")
     void mulResultOver100000() {
         Assertions.assertThatThrownBy(
-                        () -> {digitalCalculator.multiply(100001, 1);}
+                        () -> digitalCalculator.multiply(100001, 1)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Invalid limit");
     }
@@ -46,7 +46,7 @@ class CalculatorTest {
     @DisplayName("결과 값이 0 미만일 경우 예외가 발생한다.")
     void subResultUnder0() {
         Assertions.assertThatThrownBy(
-                        () -> {digitalCalculator.subtract(1, 3);}
+                        () -> digitalCalculator.subtract(1, 3)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Invalid limit");
     }
@@ -55,7 +55,7 @@ class CalculatorTest {
     @DisplayName("결과 값이 정수가 아닐 경우 예외가 발생한다.")
     void divResultNotInteger() {
         Assertions.assertThatThrownBy(
-                        () -> {digitalCalculator.divide(7, 3);}
+                        () -> digitalCalculator.divide(7, 3)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Invalid integer value");
     }
@@ -64,7 +64,7 @@ class CalculatorTest {
     @DisplayName("나누는 값이 0일 경우 예외가 발생한다.")
     void divDivisorZero() {
         Assertions.assertThatThrownBy(
-                        () -> {digitalCalculator.divide(7, 0);}
+                        () -> digitalCalculator.divide(7, 0)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Divisor Zero");
     }
@@ -80,7 +80,7 @@ class CalculatorTest {
     @DisplayName("직각 삼각형의 넓이가 정수가 아닐 경우 예외가 발생한다.")
     void triangleResultNotInteger() {
         Assertions.assertThatThrownBy(
-                        () -> {engineeringCalculator.calculateRightTriangleWidth(7, 3);}
+                        () -> engineeringCalculator.calculateRightTriangleWidth(7, 3)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Invalid integer value");
     }
@@ -89,7 +89,7 @@ class CalculatorTest {
     @DisplayName("직각 삼각형의 넓이가 100,000 초과일 경우 예외가 발생한다.")
     void triangleResultOver100000() {
         Assertions.assertThatThrownBy(
-                        () -> {engineeringCalculator.calculateRightTriangleWidth(100001, 2);}
+                        () -> engineeringCalculator.calculateRightTriangleWidth(100001, 2)
                 ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Invalid limit");
     }
