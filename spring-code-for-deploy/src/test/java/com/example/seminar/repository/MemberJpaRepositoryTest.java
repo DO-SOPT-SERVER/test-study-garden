@@ -41,10 +41,7 @@ public class MemberJpaRepositoryTest {
         Member member = FixtureMember.createMember("정원", "garden", 26);
         Member savedMember = memberJpaRepository.save(member);
 
-        // when
-        Member findMember = memberJpaRepository.findByIdOrThrow(savedMember.getId());
-
-        // then
+        // when, then
         Assertions.assertThatThrownBy(() -> {
             memberJpaRepository.findByIdOrThrow(0L);
         }).isInstanceOf(MemberException.class)
