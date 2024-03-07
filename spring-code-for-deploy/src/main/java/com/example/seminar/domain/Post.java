@@ -38,8 +38,8 @@ public class Post extends BaseTimeEntity {
     }
 
     private void validateTitle(String title) {
-        if (title.length() > 50) {
-            throw new PostException("제목은 50자 이하여야 합니다.");
+        if (title.length() > 5) {
+            throw new PostException("제목은 5자 이하여야 합니다.");
         }
     }
 
