@@ -9,10 +9,5 @@ public record MemberCreateRequest(
         int age,
         SOPT sopt
 ) {
-    public MemberCreateRequest(String name, String nickname, int age, SOPT sopt) {
-        this.name = name;
-        this.nickname = nickname;
-        this.age = age;
-        this.sopt = sopt;
-    }
+
 }

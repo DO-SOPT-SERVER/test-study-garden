@@ -3,7 +3,6 @@ package com.example.seminar.repository;
 import com.example.seminar.common.exception.MemberException;
 import com.example.seminar.domain.FixtureMember;
 import com.example.seminar.domain.Member;
-import jakarta.persistence.EntityNotFoundException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,9 +41,7 @@ public class MemberJpaRepositoryTest {
         Member savedMember = memberJpaRepository.save(member);
 
         // when, then
-        Assertions.assertThatThrownBy(() -> {
-            memberJpaRepository.findByIdOrThrow(0L);
-        }).isInstanceOf(MemberException.class)
+        Assertions.assertThatThrownBy(() -> memberJpaRepository.findByIdOrThrow(0L)).isInstanceOf(MemberException.class)
                 .hasMessage("존재하지 않는 회원입니다.");
     }
 }
