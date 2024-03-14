@@ -2,8 +2,11 @@ package com.example.seminar.controller;
 
 import com.example.seminar.domain.FixtureMember;
 import com.example.seminar.domain.Member;
+import com.example.seminar.domain.Part;
 import com.example.seminar.dto.request.member.MemberCreateRequest;
+import com.example.seminar.dto.request.member.MemberProfileUpdateRequest;
 import com.example.seminar.dto.request.post.PostCreateRequest;
+import com.example.seminar.dto.request.post.PostUpdateRequest;
 import com.example.seminar.dto.response.MemberGetResponse;
 import com.example.seminar.service.member.MemberService;
 import com.example.seminar.service.post.PostService;
@@ -61,5 +64,27 @@ public class MemberControllerTest extends ControllerTestManager{
                 .andExpect(MockMvcResultMatchers.jsonPath("age").value(26))
                 .andExpect(MockMvcResultMatchers.jsonPath("nickname").value("garden"));
     }
+
+//    @Test
+//    @DisplayName("회원 정보를 수정한다.")
+//    void updateMember() throws Exception {
+//        // given
+//        MemberProfileUpdateRequest request = new MemberProfileUpdateRequest((short) 34, Part.WEB);
+//
+//        // when, then
+//        mockMvc.perform(MockMvcRequestBuilders.patch(MEMBER_API_ENDPOINT+"/1")
+//                        .content(objectMapper.writeValueAsString(request)))
+//                .andDo(MockMvcResultHandlers.print())
+//                .andExpect(MockMvcResultMatchers.status().isNoContent());
+//    }
+//
+//    @Test
+//    @DisplayName("회원을 삭제한다.")
+//    void deleteMember() throws Exception {
+//        // given, when, then
+//        mockMvc.perform(MockMvcRequestBuilders.delete(MEMBER_API_ENDPOINT+"/1"))
+//                .andDo(MockMvcResultHandlers.print())
+//                .andExpect(MockMvcResultMatchers.status().isOk());
+//    }
 
 }
